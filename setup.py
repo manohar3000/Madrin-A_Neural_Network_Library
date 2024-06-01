@@ -7,7 +7,7 @@ setup(
     name="madrin",
     version="0.0.1",
     packages=find_packages(),
-    install_requires=['numpy>=1.11.1'],
+    install_requires=['numpy'],
     long_description=description,
     long_description_content_type="text/markdown",
 )
