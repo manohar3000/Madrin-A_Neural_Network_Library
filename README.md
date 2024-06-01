@@ -1,9 +1,14 @@
 # Madrin
-![Neural_Network](images/logo.png)<br>
+![Logo](images/logo.png)<br>
 A cute Neural Network library with Keras-like API with just 100 lines of code. Build for fun and educational purposes. Because the code is so simple, it is very easy to change to your needs. Still under active development. 
 
 ### Dependencies
 - [numpy](https://numpy.org/install/) 
+
+### Installation
+```shell 
+pip install madrin
+```
 
 ### Demo
 
