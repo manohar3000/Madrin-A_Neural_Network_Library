@@ -17,12 +17,12 @@ Currently it supports the following layers:
 >`Softmax()`<br>
 
 ```python
-from neuron import *
+import madrin as mad
 
-model = Network([ Linear(50,1), Relu(),
-                  Linear(50, 50), Relu(),
-                  Linear(50, 50), Relu(),
-                  Linear(1,50), Sigmoid() ])
+model = Network([ mad.Linear(50,1), mad.Relu(),
+                  mad.Linear(50, 50), mad.Relu(),
+                  mad.Linear(50, 50), mad.Relu(),
+                  mad.Linear(1,50), mad.Sigmoid() ])
 ```
 
 **Training**<br>
@@ -32,7 +32,7 @@ model.fit(inputs, labels, learning_rate, epochs, loss='mse')
 
 **Evaluate**<br>
 ```python
-model.costs(inputs, labels) #Compute the mean square error
+model.costs(inputs, labels)
 ```
 
 **Predictions**<br>
