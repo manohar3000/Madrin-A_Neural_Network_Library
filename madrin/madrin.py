@@ -90,6 +90,10 @@ class Network():
             inputs=layer.forward(inputs)
         return inputs
 
+    def compile(self, loss, lr):
+        self.loss=loss
+        self.lr=lr
+
     def backward(self,x,y,lr):
         gradient_outputs=self.derivative_of_loss(x,y)
         for layer in reversed(self.layers):
@@ -106,10 +110,9 @@ class Network():
             clipped_outputs = np.clip(outputs, 1e-15, 1 - 1e-15)
             return -(one_hot/clipped_outputs)
 
-    def fit(self, x, y, lr, epochs, loss='mse'):
-        self.loss=loss
+    def fit(self, x, y, epochs):
         for i in range(epochs):
-            self.backward(x,y,lr)
+            self.backward(x,y,self.lr)
             self.costs.append(self.cost(x,y))
 
     def cost(self,samples,labels):
