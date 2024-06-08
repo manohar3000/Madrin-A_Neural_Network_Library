@@ -1,6 +1,7 @@
 import numpy as np
+import sys
 class Linear():
-    def __init__(self,no_of_neurons,input_size,gain=1):
+    def __init__(self,no_of_neurons,input_size,gain=1.0):
         self.no_of_neurons=no_of_neurons
         self.input_size=input_size
 
@@ -109,6 +110,9 @@ class Network():
             one_hot[np.arange(labels.shape[0]), labels] = 1
             clipped_outputs = np.clip(outputs, 1e-15, 1 - 1e-15)
             return -(one_hot/clipped_outputs)
+
+        else:
+            sys.exit("Specify a valid loss function(mse or categorical_crossentropy)")
 
     def fit(self, x, y, epochs):
         for i in range(epochs):
