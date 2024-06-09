@@ -1,1 +1,1 @@
-from .madrin import Linear, Relu, Sigmoid, Tanh, Softmax, Network
+from .madrin import Linear, Relu, LeakyRelu, Sigmoid, Tanh, Softmax, Network
