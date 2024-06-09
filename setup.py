@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="madrin",
-    version="0.0.2",
+    version="1.0.0",
     description="A Neural Network Library",
     packages=find_packages(),
     install_requires=['numpy'],
